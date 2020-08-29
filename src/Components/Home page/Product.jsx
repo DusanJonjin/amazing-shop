@@ -3,13 +3,22 @@ import { ProductImg, ProductName, ProductPrice, StockedOrNot } from '../- Joint 
 
 export function Product({ product }) {
 
+    const { 
+        name,
+        image,
+        price,
+        stock
+    } = product;
+
     return (
          <div className='product'>
-            <ProductImg />
+            <ProductImg productName={name}
+                        productImage={image} 
+            />
             <div id='product-text-box'>
-                <ProductName />
-                <ProductPrice />
-                <StockedOrNot />
+                <ProductName productName={name} />
+                <ProductPrice productPrice={price} />
+                <StockedOrNot productStock={stock} />
             </div>
         </div>
     )

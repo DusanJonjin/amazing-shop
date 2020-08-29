@@ -2,7 +2,7 @@ import React from 'react';
 import { ProductImg, ProductName, ProductPrice, StockedOrNot } from '../- Joint components -/AllJointComponents';
 import { DetailsTable } from './DetailsTable';
 
-export function ProductDetailsBox({ selectedProduct }) {
+export function ProductDetailsBox() {
 
     return (
         <section className='product-detail-box'>

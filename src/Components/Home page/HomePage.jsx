@@ -1,25 +1,48 @@
-import React from 'react';
-import { ProductList } from './ProductList';
+import React, { useState } from 'react';
+import { ProductsList } from './ProductsList';
 
-export function HomePage() {
+export function HomePage({ allProducts }) {
+
+    const [inStockOnly, setInStockOnly] = useState(false);
+
+    const [searchText, setSearchText] = useState('');
+
+    const handleSearchText = e => {
+        setSearchText(e.currentTarget.value);
+    };
+
+    const handleInStockOnly = e => {
+        setInStockOnly(e.currentTarget.checked);
+    };
+
+    const productsFiltered = inStockOnly ? 
+        allProducts.filter(product => 
+            product.stock > 0 && product.name.toLowerCase().indexOf(searchText.toLowerCase()) !== -1)
+      : allProducts.filter(product => 
+            product.name.toLowerCase().indexOf(searchText.toLowerCase()) !== -1)
+    ;
+
 
     return (
         <main className='home-page'>
             <fieldset>
                 <div className='fieldset-wrapper'>
                     <input type='search' placeholder='Search for products...'
-                           onChange={e => (e)}
-                           value='filterText' 
+                           onChange={handleSearchText}
+                           value={searchText} 
                     />                   
                     <input type='checkbox' name='checkbox'
-                           onChange={e => (e)}
-                            //checked={inStockOnly}
+                           onChange={handleInStockOnly}
+                            checked={inStockOnly}
                            style={{margin: '10px 3px 0 2px'}}
                     />                   
                     <label>Only show products in stock</label>
                 </div>
             </fieldset>
-            <ProductList />
+            <ProductsList products={productsFiltered}
+                         inStockOnly={inStockOnly}
+                         searchText={searchText}
+            />
         </main>
     );
 }
