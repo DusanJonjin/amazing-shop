@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { ProductsList } from './ProductsList';
+import './Styles/HomePage.css'
 
 export function HomePage({ allProducts }) {
 
     const [inStockOnly, setInStockOnly] = useState(false);
 
     const [searchText, setSearchText] = useState('');
+
 
     const handleSearchText = e => {
         setSearchText(e.currentTarget.value);
@@ -30,19 +32,18 @@ export function HomePage({ allProducts }) {
                     <input type='search' placeholder='Search for products...'
                            onChange={handleSearchText}
                            value={searchText} 
-                    />                   
-                    <input type='checkbox' name='checkbox'
-                           onChange={handleInStockOnly}
+                    />
+                    <label>                  
+                        <input type='checkbox' name='checkbox'
+                            onChange={handleInStockOnly}
                             checked={inStockOnly}
-                           style={{margin: '10px 3px 0 2px'}}
-                    />                   
-                    <label>Only show products in stock</label>
+                            style={{margin: '10px 3px 0 2px'}}
+                        />                   
+                        Only show products in stock
+                    </label>
                 </div>
             </fieldset>
-            <ProductsList products={productsFiltered}
-                         inStockOnly={inStockOnly}
-                         searchText={searchText}
-            />
+            <ProductsList products={productsFiltered} />
         </main>
     );
 }

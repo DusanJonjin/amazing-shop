@@ -1,5 +1,6 @@
 import React from 'react';
 import { Product } from './Product';
+import './Styles/ProductsList.css'
 
 
 export function ProductsList({ products }) {
@@ -15,9 +16,9 @@ export function ProductsList({ products }) {
     const categoriesCleanArr = [...categoriesSet];
 
     const productsList = categoriesCleanArr.map((category, i) => 
-        <li key={i}>
+        <li key={i} className='category-name-li'>
             {category}
-            <ul>
+            <ul className='category-products-ul'>
                 {products.reduce((acc, product) => 
                     product.category === category ?
                         [...acc, <li key={product.id}><Product product={product} /></li>]
@@ -28,7 +29,7 @@ export function ProductsList({ products }) {
     );
 
     return (
-        <section className='product-list'>
+        <section className='products-list'>
             <ul>
                 {productsList}
             </ul>

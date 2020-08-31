@@ -1,0 +1,46 @@
+.products-list {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.products-list > ul { 
+   margin: 1em 1.5em;
+}
+
+
+.category-name-li {
+    font-size: 28px;
+    font-weight: bold;
+    padding: .5em 0;
+    color: rgb(221, 109, 34);
+}
+
+.category-products-ul {
+    margin-top: .3em;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.category-products-ul > li {
+    /*border: 2px solid lightpink;*/
+    margin: 15px;
+    flex: 0 0 254px; /* All li's have equal width, no matter which content they have*/
+}
+
+@media only screen and (max-width: 1200px) {
+    .category-products-ul {
+        justify-content: center;
+    }
+}
+

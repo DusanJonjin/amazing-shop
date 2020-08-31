@@ -1,0 +1,40 @@
+.product-details {
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 65px 0 0 0;
+}
+
+.back {
+    font-size: 21px;
+    margin: 25px 0 25px 10px;
+    padding: 3px 12px 5px 10px;
+    display: inline-block;
+    background-color: rgb(3, 135, 168);
+    border-radius: 6px;
+    color: white;
+    transition: .3s ease;
+}
+.back:hover {
+    cursor: pointer;
+    background-color: rgb(2, 151, 189);
+}
+
+.product-details > h3 {
+    font-size: 30px;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    color: rgb(50, 50, 50);
+}
+
+.product-details > h4 {
+    font-size: 26px;
+    padding: 25px 0 20px 10px;
+    margin: 0;
+    color: rgb(202, 91, 17);
+}
+
+.product-details > h4 > span {
+    color: rgb(70, 70, 70);
+}

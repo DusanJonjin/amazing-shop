@@ -7,8 +7,8 @@ export function StockedOrNot({ productStock }) {
     if (inStock) {
         return (
             <div className='stocked'>
-                <p>In stock</p>
-                <p>Add to cart(In Cart)</p>
+                <p className='stock'>In stock</p>
+                <p className='cart'>Add to cart</p>
             </div>
         );
     }

@@ -1,8 +1,12 @@
 import React from 'react';
 
 export function ProductImg({ productImage, productName }) {
-    
+
     return (
-        <img src={productImage} alt={productName} />
+        <div className='img-wrap'>
+            <img src={productImage} 
+                 alt={productName}
+            />
+        </div>
     );
 }

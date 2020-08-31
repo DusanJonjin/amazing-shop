@@ -1,0 +1,96 @@
+.product {
+    border: 2px solid rgb(215, 216, 214);
+    border-radius: 5px;
+}
+
+.product .img-wrap {
+    max-width: 250px;
+    height: 250px;
+    background: rgb(240, 240, 240);
+    border-radius: 7px;
+    position: relative;
+}
+
+.product .img-wrap::after {
+    content: '';
+    width: 175px;
+    height: 175px;
+    border-radius: 20%;
+    background: rgb(215, 215, 215);
+    position: absolute;
+    left: 15%;
+    top: 15%;
+    z-index: 1;
+}
+
+.product .img-wrap > img {
+    max-width: 250px;
+    height: 250px;
+    position: absolute;
+    z-index: 2;
+    cursor: pointer;
+}
+
+#product-text-box {
+    height: 145px;
+    padding: 0 15px;
+    font-size: 18px;
+}
+
+#product-text-box h3 {
+    margin: 5px 0 0 0;
+    font-size: 20px;
+    cursor: pointer;
+    color:rgb(27, 1, 100);
+}
+
+#product-text-box h3:hover{
+    text-decoration: underline;
+}
+
+#product-price {
+    font-size: 21px;
+    font-weight: normal;
+    color: black;
+    margin: 15px 0 0 0;
+}
+
+.stocked p {
+    display: inline-block;
+    font-weight: normal;
+}
+
+.stock {
+    padding: 0 35px 0 0;
+}
+
+.cart {
+    background: rgb(18, 177, 18);
+    padding: 5px 15px;
+    border-radius: 7px;
+    color: white;
+    cursor: pointer;
+    transition: .6s ease;
+}
+
+.plus {
+    background-color: transparent;
+    color: black;
+    width: 90px;
+    background-image: url('../../../Images/tick.png');
+    background-repeat: no-repeat;
+    background-size: 45px 45px;
+    background-position: 105%;
+    text-indent: 8px;
+    cursor: text;
+}
+
+.no-stock {
+    font-size: 18px;
+    font-weight: normal;
+    padding: 5px 0;
+    background: red;
+    text-align: center;
+    color: white;
+    border-radius: 8px;
+}
