@@ -26,6 +26,10 @@ nav {
     vertical-align: text-top;
 }
 
+.disabled {
+    pointer-events: none;
+}
+
 #cart-link {
     display: flex;
 }

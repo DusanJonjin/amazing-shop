@@ -1,6 +1,6 @@
 import React from 'react'
 
-export function ProductInCart( { product }) {
+export function ProductInCart({ product, removeProductFromCart }) {
 
     return (
         <div id='cart-product'>           
@@ -17,7 +17,9 @@ export function ProductInCart( { product }) {
             <p id='sub-total'>€Subtotal</p>
             <div id='cart-remove-wrap'>
                 <div>Purchase limit reached!</div>
-                <p>Remove from Cart</p>
+                <p onClick={() => removeProductFromCart(product)}>
+                    Remove from Cart
+                </p>
             </div>
         </div>
     );

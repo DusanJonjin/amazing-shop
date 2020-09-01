@@ -3,7 +3,7 @@ import { DetailsBox } from './DetailsBox';
 import { Link, useLocation } from 'react-router-dom';
 import './Style/ProductDetailsPage.css'
 
-export function ProductDetailsPage({ allProducts }) {
+export function ProductDetailsPage({ allProducts, addProductInCart, productsInCart}) {
 
     const { state } = useLocation();
 
@@ -13,6 +13,8 @@ export function ProductDetailsPage({ allProducts }) {
         product.id === state.productId)[0]
     ;
 
+    const isInCart = productsInCart.some(product =>
+        product.id === selectedProduct.id);
 
     return (
         <main className='product-details'>
@@ -21,7 +23,10 @@ export function ProductDetailsPage({ allProducts }) {
             </Link>
             <h3>Product details</h3>
             <h4><span>Category:</span> {selectedProduct.category}</h4>
-            <DetailsBox product={selectedProduct} />
+            <DetailsBox product={selectedProduct}
+                        addProductInCart={addProductInCart}
+                        isInCart={isInCart}
+            />
         </main>
     );
 }

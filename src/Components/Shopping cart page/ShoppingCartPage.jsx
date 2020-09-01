@@ -3,7 +3,7 @@ import { ProductsInCartList } from './ProductsInCartList';
 import { Modal } from './Modal';
 import { CartTotalSum } from './CartTotalSum';
 
-export function ShoppingCartPage({ productsInCart }) {
+export function ShoppingCartPage({ productsInCart, removeProductFromCart }) {
 
     const isNotEmpty = productsInCart.length > 0;
 
@@ -20,7 +20,9 @@ export function ShoppingCartPage({ productsInCart }) {
                         <p id='head-sub'>Subtotal</p>
                         <p id='plcholder'></p>
                     </div>
-                    <ProductsInCartList products={productsInCart} />
+                    <ProductsInCartList products={productsInCart}
+                                        removeProductFromCart={removeProductFromCart}
+                    />
                     <CartTotalSum products={productsInCart} />
                     <div id='submit-btn-wrap'>
                         <button id='submit-btn' >

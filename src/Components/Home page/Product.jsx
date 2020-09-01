@@ -3,7 +3,7 @@ import { ProductImg, ProductName, ProductPrice, StockedOrNot } from '../- Joint 
 import { Link } from 'react-router-dom';
 import './Styles/Product.css'
 
-export function Product({ product }) {
+export function Product({ product, addProductInCart, productsInCart }) {
 
     const { 
         id,
@@ -19,6 +19,12 @@ export function Product({ product }) {
             productId: id
         }
     };
+
+    const isInCart = productsInCart.some(prdct =>
+        prdct.id === id
+    );
+
+    const cartStyle = 'added-from-home'; 
 
     return (
          <div className='product'>
@@ -38,7 +44,11 @@ export function Product({ product }) {
                     </Link>
                  </div>
                 <ProductPrice productPrice={price} />
-                <StockedOrNot productStock={stock} />
+                <StockedOrNot productStock={stock}
+                              addProductInCart={addProductInCart}
+                              isInCart={isInCart}
+                              cartStyle={cartStyle}
+                />
             </div>
         </div>
     )

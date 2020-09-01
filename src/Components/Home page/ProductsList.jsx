@@ -3,7 +3,7 @@ import { Product } from './Product';
 import './Styles/ProductsList.css'
 
 
-export function ProductsList({ products }) {
+export function ProductsList({ products, addProductInCart, productsInCart }) {
 
     //We map products array to get the array of all category names:
     const categoriesAllArr = products.map(product => product.category);
@@ -21,8 +21,16 @@ export function ProductsList({ products }) {
             <ul className='category-products-ul'>
                 {products.reduce((acc, product) => 
                     product.category === category ?
-                        [...acc, <li key={product.id}><Product product={product} /></li>]
-                    : acc, [])
+                        [
+                            ...acc, 
+                            <li key={product.id}>
+                                <Product product={product}
+                                         addProductInCart={() => addProductInCart(product)}
+                                         productsInCart={productsInCart} 
+                                />
+                            </li>
+                        ]
+                    :   acc, [])
                 }
             </ul>
         </li>

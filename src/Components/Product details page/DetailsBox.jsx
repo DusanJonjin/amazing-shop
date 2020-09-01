@@ -2,9 +2,10 @@ import React from 'react';
 import { ProductImg, ProductName, ProductPrice, StockedOrNot } from '../- Joint components -/AllJointComponents';
 import { DetailsTable } from './DetailsTable';
 import './Style/DetailsBox.css'
+import { useState } from 'react';
 
 
-export function DetailsBox({ product }) {
+export function DetailsBox({ product, addProductInCart, isInCart }) {
 
     const { 
         name,
@@ -13,6 +14,8 @@ export function DetailsBox({ product }) {
         details,
         stock
     } = product;
+
+    const cartStyle = 'added-from-details';
 
     return (
         <section className='details-box'>
@@ -23,7 +26,11 @@ export function DetailsBox({ product }) {
                 <ProductName productName={name} />
                 <ProductPrice productPrice={price} />
                 <DetailsTable details={details} />
-                <StockedOrNot productStock={stock} />
+                <StockedOrNot productStock={stock}
+                              addProductInCart={() => addProductInCart(product)}
+                              isInCart={isInCart}
+                              cartStyle={cartStyle}
+                />
             </div>
         </section>
     );

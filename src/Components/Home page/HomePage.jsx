@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { ProductsList } from './ProductsList';
 import './Styles/HomePage.css'
 
-export function HomePage({ allProducts }) {
+export function HomePage({ allProducts, addProductInCart, productsInCart }) {
 
     const [inStockOnly, setInStockOnly] = useState(false);
 
@@ -43,7 +43,10 @@ export function HomePage({ allProducts }) {
                     </label>
                 </div>
             </fieldset>
-            <ProductsList products={productsFiltered} />
+            <ProductsList products={productsFiltered}
+                          addProductInCart={addProductInCart}
+                          productsInCart={productsInCart}
+            />
         </main>
     );
 }

@@ -78,6 +78,17 @@
     width: 10em;
     margin: 30px auto;
 }
+/*add this class when add to cart is clicked on details page:*/
+.added-from-details {
+    background-color: transparent;
+    width: 110px;
+    background-image: url('../../../Images/tick.png');
+    background-repeat: no-repeat;
+    background-size: 40px;
+    background-position: 95%;
+    cursor: text;
+    text-indent: 8px;
+}
 
 
 @media only screen and (max-width: 1200px) {

@@ -1,6 +1,6 @@
 import React from 'react'
 
-export function StockedOrNot({ productStock }) {
+export function StockedOrNot({ productStock, addProductInCart, isInCart, cartStyle }) {
     
     const inStock = productStock > 0;
 
@@ -8,7 +8,11 @@ export function StockedOrNot({ productStock }) {
         return (
             <div className='stocked'>
                 <p className='stock'>In stock</p>
-                <p className='cart'>Add to cart</p>
+                <p className={`cart ${isInCart && cartStyle}`}
+                   onClick={addProductInCart}
+                >
+                    {isInCart ? 'In Cart' : 'Add to cart'}
+                </p>
             </div>
         );
     }

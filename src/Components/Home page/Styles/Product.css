@@ -72,8 +72,8 @@
     cursor: pointer;
     transition: .6s ease;
 }
-
-.plus {
+/*add this class when add to cart is clicked on home page:*/
+.added-from-home {
     background-color: transparent;
     color: black;
     width: 90px;
