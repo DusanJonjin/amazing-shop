@@ -2,7 +2,6 @@ import React from 'react';
 import { ProductImg, ProductName, ProductPrice, StockedOrNot } from '../- Joint components -/AllJointComponents';
 import { DetailsTable } from './DetailsTable';
 import './Style/DetailsBox.css'
-import { useState } from 'react';
 
 
 export function DetailsBox({ product, addProductInCart, isInCart }) {

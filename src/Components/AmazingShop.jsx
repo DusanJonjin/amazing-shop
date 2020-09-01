@@ -28,6 +28,11 @@ export function AmazingShop() {
         setProductsInCart(removeProduct);
     };
 
+    const handleModalClose = setModalOpen => {
+        setModalOpen(false);
+        setProductsInCart([]);
+    };
+
     return (
         <React.Fragment>
             <Navbar />
@@ -40,7 +45,8 @@ export function AmazingShop() {
                 </Route>
                 <Route path='/shopping_cart'>
                     <ShoppingCartPage productsInCart={productsInCart}
-                                      removeProductFromCart={removeProductFromCart} />
+                                      removeProductFromCart={removeProductFromCart}
+                                      handleModalClose={handleModalClose} />
                 </Route>
                 <Route path='/:productDetails'>
                     <ProductDetailsPage allProducts={allProducts}

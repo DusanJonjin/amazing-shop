@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import './Styles/ProductInCart.css'
 
 export function ProductInCart({ product, removeProductFromCart }) {
 
@@ -16,9 +17,9 @@ export function ProductInCart({ product, removeProductFromCart }) {
             </div>
             <p id='sub-total'>€Subtotal</p>
             <div id='cart-remove-wrap'>
-                <div>Purchase limit reached!</div>
+                <div className='max'>Purchase limit reached!</div>
                 <p onClick={() => removeProductFromCart(product)}>
-                    Remove from Cart
+                    Remove
                 </p>
             </div>
         </div>

@@ -1,0 +1,30 @@
+
+#cart-product-ul {
+    margin: 0;
+}
+
+#cart-product-ul > li {
+    margin: 0;
+    border-top: 1px solid rgb(210, 210, 210);
+}
+
+#cart-product-ul > li:last-child {
+    margin: 0;
+    border-bottom: 1px solid  rgb(210, 210, 210);
+}
+
+@media only screen and (max-width: 920px) {
+    #cart-product-ul > li {
+        border-top: 1px solid rgb(190, 190, 190);
+    }
+    
+    #cart-product-ul > li:last-child {
+        border-bottom: 1px solid  rgb(190, 190, 190);
+    }
+}
+
+
+
+
+
+

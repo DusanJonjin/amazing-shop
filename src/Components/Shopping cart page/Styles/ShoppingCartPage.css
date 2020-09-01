@@ -1,0 +1,131 @@
+#shopping-cart {
+    margin: 0 auto;
+    padding: 65px 0 20px 0;
+    width: 1200px;
+    max-width: 100%;
+}
+
+#shopping-cart > h2 {
+    text-align: center;
+    padding: 0 0 20px 0;
+    margin: 0;
+    font-size: 30px;
+}
+
+#header {
+    display: flex;
+    padding: 5px 0;
+    font-size: 20px;
+    background-color: rgb(223, 237, 255);
+    border-top: 1px solid  rgb(210, 210, 210);
+    color: rgb(107, 113, 119);
+}
+
+#header > p {
+    margin: 0;
+}
+
+#head-name {
+    
+    width: 570px;
+    max-width: 100%;
+    text-align: center;
+}
+
+#head-price, #head-sub {
+    width: 122px;
+    text-align: right;
+    box-sizing: border-box;
+    padding: 0 12px 0 0;
+    max-width: 100%;
+}
+
+#head-quant {
+    width: 129px;
+    text-align: center;
+    max-width: 100%;
+    
+}
+
+#plcholder {
+    width: 175px;
+    height: 25px;
+    max-width: 100%;
+}
+
+#empty-cart-div {
+    width: 1300px;
+    max-width: 100%;
+    margin: 10px auto 0 auto;
+    text-align: center;
+}
+
+#empty-cart-div p {
+    text-align: center;
+    font-size: 26px;
+    padding: 0;
+    margin: 0;
+}
+
+
+#empty-cart-img {
+    width: 325px;
+    max-width: 100%;
+}
+
+#submit-btn-wrap {
+    margin: 0;
+    padding: 20px 0;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+#submit-btn {
+    padding: 10px;
+    background: rgb(16, 172, 16);
+    color: rgb(255, 251, 244);
+    font-size: 17px;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: .4s ease;
+}
+#submit-btn:hover {
+    background: rgb(16, 187, 16);
+}
+
+@media only screen and (max-width: 1120px){
+
+    #plcholder {
+        width: 185px;
+    }
+}
+
+@media only screen and (max-width: 1060px){
+
+    #plcholder {
+        width: 200px;
+    }
+}
+
+@media only screen and (max-width: 1010px){
+
+    #plcholder {
+        width: 210px;
+    }
+}
+
+@media only screen and (max-width: 950px){
+
+    #plcholder {
+        width: 215px;
+    }
+}
+
+@media only screen and (max-width: 920px){
+
+    #header {
+        display: none;
+    }
+}

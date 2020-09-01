@@ -1,5 +1,6 @@
 import React from 'react';
 import { ProductInCart } from './ProductInCart';
+import './Styles/ProductsInCartList.css';
 
 export function ProductsInCartList({ products, removeProductFromCart}) {
 
@@ -7,7 +8,8 @@ export function ProductsInCartList({ products, removeProductFromCart}) {
         <li key={product.id}>
             <ProductInCart product={product}
                            removeProductFromCart={removeProductFromCart} />
-        </li>);
+        </li>
+    );
 
     return (
         <ul id='cart-product-ul' >

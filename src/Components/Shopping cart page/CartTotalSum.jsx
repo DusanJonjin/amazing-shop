@@ -1,4 +1,5 @@
 import React from 'react';
+import './Styles/CartTotalSum.css'
 
 export function CartTotalSum() {
     
