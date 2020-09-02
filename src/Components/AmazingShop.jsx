@@ -61,7 +61,7 @@ export function AmazingShop() {
 
     return (
         <React.Fragment>
-            <Navbar />
+            <Navbar productsInCart={productsInCart} />
             <Switch>
                 <Route exact path='/'>
                     <HomePage allProducts={allProducts}
