@@ -43,7 +43,7 @@ export function ShoppingCartPage(props) {
                                         increaseCartQuantity={increaseCartQuantity}
                                         decreaseCartQuantity={decreaseCartQuantity}
                     />
-                    <CartTotalSum products={productsInCart} />
+                    <CartTotalSum productsInCart={productsInCart} />
                     <div id='submit-btn-wrap'>
                         <button id='submit-btn'
                                 onClick={handleModalOpen}
