@@ -1,3 +1,8 @@
+.invalid-url {
+    padding: 85px 0 0 0;
+    text-align: center;
+}
+
 .product-details {
     width: 1200px;
     max-width: 100%;

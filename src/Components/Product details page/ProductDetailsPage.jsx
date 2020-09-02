@@ -7,6 +7,8 @@ export function ProductDetailsPage({ allProducts, addProductInCart, productsInCa
 
     const { state } = useLocation();
 
+    if (!state) return <h2 className='invalid-url'>Url Not Found!</h2>
+
     const productsExist = allProducts.length > 0
 
     const selectedProduct = productsExist && allProducts.filter(product => 
