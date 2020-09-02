@@ -5,7 +5,15 @@ import { CartTotalSum } from './CartTotalSum';
 import { Link } from 'react-router-dom';
 import './Styles/ShoppingCartPage.css'
 
-export function ShoppingCartPage({ productsInCart, removeProductFromCart, handleModalClose}) {
+export function ShoppingCartPage(props) {
+
+    const { 
+        productsInCart, 
+        removeProductFromCart, 
+        handleModalClose, 
+        increaseCartQuantity ,
+        decreaseCartQuantity
+    } = props;
 
     const [modalOpen, setModalOpen] = useState(false);
 
@@ -13,12 +21,12 @@ export function ShoppingCartPage({ productsInCart, removeProductFromCart, handle
 
     const handleModalOpen = () => {
         setModalOpen(true);
-    }
+    };
 
     return (
         <main id='shopping-cart'>
             <Link to='/' className='link'>
-                <p className='back'>&lsaquo;&nbsp;Back to store</p>
+                <p className='back'>&lsaquo;&nbsp;Back to shop</p>
             </Link>
             <h2>Shopping Cart</h2>
             { isNotEmpty ?
@@ -32,6 +40,8 @@ export function ShoppingCartPage({ productsInCart, removeProductFromCart, handle
                     </div>
                     <ProductsInCartList products={productsInCart}
                                         removeProductFromCart={removeProductFromCart}
+                                        increaseCartQuantity={increaseCartQuantity}
+                                        decreaseCartQuantity={decreaseCartQuantity}
                     />
                     <CartTotalSum products={productsInCart} />
                     <div id='submit-btn-wrap'>

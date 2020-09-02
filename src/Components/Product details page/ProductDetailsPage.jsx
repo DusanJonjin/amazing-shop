@@ -19,7 +19,7 @@ export function ProductDetailsPage({ allProducts, addProductInCart, productsInCa
     return (
         <main className='product-details'>
             <Link to='/' className='link'>
-                <p className='back'>&lsaquo;&nbsp;Back to store</p>
+                <p className='back'>&lsaquo;&nbsp;Back to shop</p>
             </Link>
             <h3>Product details</h3>
             <h4><span>Category:</span> {selectedProduct.category}</h4>

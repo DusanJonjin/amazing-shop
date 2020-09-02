@@ -28,6 +28,32 @@ export function AmazingShop() {
         setProductsInCart(removeProduct);
     };
 
+    const increaseCartQuantity = product => {
+        setProductsInCart(prevPrdctsInCart => {
+            const increasePrdctCartQuant = prevPrdctsInCart.map(prevPrdct => {
+                if (prevPrdct.id === product.id) {
+                    if (prevPrdct.stock === product.cartQuantity) return prevPrdct;
+                    else return {...prevPrdct, cartQuantity: prevPrdct.cartQuantity + 1};
+                }
+                else return prevPrdct;
+            })
+            return increasePrdctCartQuant;
+        });  
+    };
+
+    const decreaseCartQuantity = product => {
+        setProductsInCart(prevPrdctsInCart => {
+            const decreasePrdctCartQuant = prevPrdctsInCart.map(prevPrdct => {
+                if (prevPrdct.id === product.id) {
+                    if (product.cartQuantity <= 1) return prevPrdct;
+                    else return {...prevPrdct, cartQuantity: prevPrdct.cartQuantity - 1};
+                }
+                else return prevPrdct;
+            })
+            return decreasePrdctCartQuant;
+        });
+    };
+
     const handleModalClose = setModalOpen => {
         setModalOpen(false);
         setProductsInCart([]);
@@ -46,7 +72,10 @@ export function AmazingShop() {
                 <Route path='/shopping_cart'>
                     <ShoppingCartPage productsInCart={productsInCart}
                                       removeProductFromCart={removeProductFromCart}
-                                      handleModalClose={handleModalClose} />
+                                      handleModalClose={handleModalClose}
+                                      increaseCartQuantity={increaseCartQuantity}
+                                      decreaseCartQuantity={decreaseCartQuantity}
+                    />
                 </Route>
                 <Route path='/:productDetails'>
                     <ProductDetailsPage allProducts={allProducts}

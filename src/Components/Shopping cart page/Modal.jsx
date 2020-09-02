@@ -1,7 +1,7 @@
 import React from 'react';
 import './Styles/Modal.css';
 
-export function Modal ({ modalOpen, handleModalClose }) {
+export function Modal({ modalOpen, handleModalClose }) {
 
     return (
         <section className={`modal ${modalOpen && 'm-opened'}`}>

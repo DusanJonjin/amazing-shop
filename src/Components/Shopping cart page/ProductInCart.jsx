@@ -1,25 +1,47 @@
 import React from 'react';
-import './Styles/ProductInCart.css'
+import './Styles/ProductInCart.css';
+import { ProductName, ProductImg, ProductPrice } from '../- Joint components -/AllJointComponents';
 
-export function ProductInCart({ product, removeProductFromCart }) {
+export function ProductInCart(props) {
+
+    const {
+        product,
+        removeProductFromCart,
+        increaseCartQuantity,
+        decreaseCartQuantity
+    } = props;
+
+    const {
+        name,
+        image,
+        price,
+        cartQuantity,
+        stock
+    } = product;
 
     return (
-        <div id='cart-product'>           
-            <img src={product.image} alt={product.name + 'image'} />
-            <h4>{product.name}</h4>
-            <p id='cart-price'>{product.price}</p>
+        <div className='cart-product'>           
+            <ProductImg productImage={image}
+                        productName={name}
+            />
+            <ProductName productName={name} />
+            <ProductPrice productPrice={price} />
             <div id='quantity-inc-dec'>
-                <p>{product.cartQuantity}</p>
+                <p>{cartQuantity}</p>
                 <div id='plus-minus'>
-                    <p>-</p>
-                    <p>+</p>
+                    <p onClick={() => decreaseCartQuantity(product)}>
+                        -
+                    </p>
+                    <p onClick={() => increaseCartQuantity(product)}>
+                        +
+                    </p>
                 </div>
             </div>
             <p id='sub-total'>€Subtotal</p>
             <div id='cart-remove-wrap'>
                 <div className='max'>Purchase limit reached!</div>
                 <p onClick={() => removeProductFromCart(product)}>
-                    Remove
+                    Remove from cart
                 </p>
             </div>
         </div>

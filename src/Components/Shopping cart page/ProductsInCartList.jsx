@@ -2,12 +2,22 @@ import React from 'react';
 import { ProductInCart } from './ProductInCart';
 import './Styles/ProductsInCartList.css';
 
-export function ProductsInCartList({ products, removeProductFromCart}) {
+export function ProductsInCartList(props) {
+
+    const { 
+        products, 
+        removeProductFromCart, 
+        increaseCartQuantity,
+        decreaseCartQuantity
+    } = props;
 
     const allProducts = products.map(product =>
         <li key={product.id}>
             <ProductInCart product={product}
-                           removeProductFromCart={removeProductFromCart} />
+                           removeProductFromCart={removeProductFromCart}
+                           increaseCartQuantity={increaseCartQuantity}
+                           decreaseCartQuantity={decreaseCartQuantity}
+            />
         </li>
     );
 
