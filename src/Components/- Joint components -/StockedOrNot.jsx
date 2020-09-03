@@ -11,7 +11,7 @@ export function StockedOrNot({ productStock, addProductInCart, isInCart, cartSty
                 <p className={`cart ${isInCart && cartStyle}`}
                    onClick={addProductInCart}
                 >
-                    {isInCart ? 'In Cart' : 'Add to cart'}
+                    {isInCart ? 'In Cart' : 'Add to Cart'}
                 </p>
             </div>
         );

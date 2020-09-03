@@ -50,7 +50,7 @@ export function ProductInCart(props) {
             <div id='cart-remove-wrap'>
                 <div className={`max ${purchaseLimit && 'reached'}`}>Purchase limit reached!</div>
                 <p onClick={() => removeProductFromCart(product)}>
-                    Remove from cart
+                    Remove from Cart
                 </p>
             </div>
         </div>
