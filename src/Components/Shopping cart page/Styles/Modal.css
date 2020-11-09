@@ -61,13 +61,11 @@
 }
 
 #modal-icon {
-    font-size: 18px;   
     font-family: 'Niagara Engraved', sans-serif;
     font-size: 50px;
     color: rgb(90, 1, 1);
     padding: 5px 5px 5px 10px;
     box-sizing: border-box;
-
 }
 
 #modal-icon > img {
@@ -95,6 +93,19 @@
     font-size: 17px;
     color: white;
     margin: 0;
+}
+
+@media only screen and (max-width: 1200px) {
+    #modal-icon { 
+        font-family: 'Calibri', sans-serif;
+        font-size: 28px;
+        color: rgb(115, 1, 1);
+        font-weight: bold;
+    }
+
+    #modal-icon > img {
+        width: 33px;
+    }
 }
 
 
